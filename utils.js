@@ -46,13 +46,13 @@ var utils = {
 	        }
 	    }
 	},
-	ajax: function(url, type, req, err) {
+	ajax: function(url, type, req, success, err) {
     	mui.ajax(url,{
     		data:req,
     		dataType:'json',//服务器返回json格式数据
     		type:type,//HTTP请求类型
     		timeout:10000,//超时时间设置为10秒；
-    		success:req,
+    		success:success,
     		error:err
     	});
   	},
@@ -138,6 +138,6 @@ var utils = {
 			});
 		}, function(a) {}, {
 			filter: "image"
-		})
+		});
    	}
 }
